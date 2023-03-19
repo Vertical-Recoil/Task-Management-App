@@ -36,24 +36,14 @@ class TaskListScreenState extends State<TaskListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('TaskNinjaPlus'),
+        title: const Text(
+          'TaskNinjaPlus',
+          style: TextStyle(color: Colors.white, fontSize: 24.0),
+        ),
+        backgroundColor: Colors.grey[800],
       ),
       body: Column(
         children: [
-          Container(
-            color: Colors.grey[800],
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Row(
-                children: const [
-                  Text(
-                    'TaskNinjaPlus',
-                    style: TextStyle(color: Colors.white, fontSize: 24.0),
-                  ),
-                ],
-              ),
-            ),
-          ),
           Container(
             color: Colors.deepPurple[900],
             child: Padding(
@@ -101,10 +91,36 @@ class TaskListScreenState extends State<TaskListScreen> {
             child: ListView.builder(
               itemCount: tasks.length,
               itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(tasks[index].name),
-                  subtitle: Text(tasks[index].assignees),
-                  trailing: Text(tasks[index].priority),
+                return Container(
+                  margin: const EdgeInsets.symmetric(vertical: 4.0),
+                  padding: const EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8.0),
+                    border: Border.all(color: Colors.grey),
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        flex: 3,
+                        child: Text(tasks[index].name),
+                      ),
+                      const SizedBox(width: 8.0),
+                      Expanded(
+                        flex: 2,
+                        child: Text(tasks[index].assignees),
+                      ),
+                      const SizedBox(width: 8.0),
+                      Expanded(
+                        flex: 2,
+                        child: Text(tasks[index].priority),
+                      ),
+                      const SizedBox(width: 8.0),
+                      Expanded(
+                        flex: 1,
+                        child: Container(),
+                      ),
+                    ],
+                  ),
                 );
               },
             ),
@@ -158,7 +174,7 @@ class _AddTaskFormState extends State<AddTaskForm> {
       content: Form(
         key: _formKey,
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisSize: MainAxisSize.max,
           children: [
             TextFormField(
               decoration: const InputDecoration(
@@ -213,7 +229,7 @@ class _AddTaskFormState extends State<AddTaskForm> {
           },
           style: ElevatedButton.styleFrom(
             foregroundColor: Colors.white,
-            backgroundColor: Color.fromARGB(255, 94, 27, 27),
+            backgroundColor: const Color.fromARGB(255, 94, 27, 27),
           ),
           child: const Text(
             'Cancel',
