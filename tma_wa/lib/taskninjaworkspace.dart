@@ -42,6 +42,7 @@ class TaskListScreenState extends State<TaskListScreen> {
         ),
         backgroundColor: Colors.grey[800],
       ),
+      backgroundColor: const Color.fromARGB(255, 143, 143, 143),
       body: Column(
         children: [
           Container(
@@ -95,8 +96,10 @@ class TaskListScreenState extends State<TaskListScreen> {
                   margin: const EdgeInsets.symmetric(vertical: 4.0),
                   padding: const EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 26, 187, 165),
                     borderRadius: BorderRadius.circular(8.0),
-                    border: Border.all(color: Colors.grey),
+                    border: Border.all(
+                        color: const Color.fromARGB(255, 114, 114, 114)),
                   ),
                   child: Row(
                     children: [
@@ -117,7 +120,18 @@ class TaskListScreenState extends State<TaskListScreen> {
                       const SizedBox(width: 8.0),
                       Expanded(
                         flex: 1,
-                        child: Container(),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              tasks.removeAt(index);
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            foregroundColor: Colors.white,
+                            backgroundColor: Colors.red[900],
+                          ),
+                          child: const Text('Remove'),
+                        ),
                       ),
                     ],
                   ),
@@ -164,7 +178,7 @@ class _AddTaskFormState extends State<AddTaskForm> {
       ));
     }
     Navigator.pop(context);
-    print('bork');
+    print('bork'); //This bork tells me if nav pop worked.
   }
 
   @override
