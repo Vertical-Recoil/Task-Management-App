@@ -1,0 +1,35 @@
+name: namer_app
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 0.0.1+1
+
+environment:
+  sdk: '>=2.18.4 <3.0.0'
+
+dependencies:
+  cloud_firestore: ^4.4.5
+  cupertino_icons: ^1.0.2
+  english_words: ^4.0.0
+  firebase_auth: ^4.2.9
+  firebase_auth_web: ^5.2.8
+  firebase_core: ^2.7.0
+  flutter:
+    sdk: flutter
+  google: ^0.0.1
+  google_sign_in: ^6.0.2
+  google_sign_in_web: ^0.11.0+1
+  html: ^0.15.2
+  io: ^1.0.0
+  provider: ^6.0.0
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  assets:
+    - assets/image/background.png
+  uses-material-design: true
