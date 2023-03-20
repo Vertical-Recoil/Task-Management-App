@@ -3,7 +3,7 @@ name: Comment
 about: Provide commentary on the project
 title: "[C]"
 labels: comment
-assignees: FK-Dante
+assignees: Vertical-Recoil
 
 ---
 
