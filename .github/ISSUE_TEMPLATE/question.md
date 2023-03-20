@@ -3,7 +3,7 @@ name: Question
 about: Ask a question regarding the project
 title: "[Q]"
 labels: question
-assignees: FK-Dante
+assignees: Vertical-Recoil
 
 ---
 
